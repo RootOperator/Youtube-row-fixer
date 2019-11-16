@@ -3,6 +3,11 @@
   "name": "YouTube row fixer",
   "version": "2.0",
   "homepage_url": "https://github.com/RootOperator/YouTube-row-fixer",
+  "applications": {
+    "gecko": {
+        "id": "{528dea52-7c0b-43a6-b899-85e7952022c3}"
+    }
+  },
 
   "description": "decide how many videos you want on one row",
 
@@ -12,7 +17,7 @@
   ],
 
   "icons":{
-    "48": "icons/icons.png"
+    "512": "icons/icon.png"
   },
 
 

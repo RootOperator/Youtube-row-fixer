@@ -1,49 +1,68 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-        <style>
-            .bg-dark {
-                background-color: #282828 !important;
-            }
 
-            button:hover {
-                color: #ffffff !important;
-            }
-        </style>
-    </head>
-    <body class="bg-dark">
-        <div class="border-bottom">
-            <div class="m-3 row">
-                <img src="../icons/icon.png" alt="icon" height="40px">
-                <h3 class="text-muted pl-2">YouTube <strong class="text-white">Row</strong> Fixer</h1>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <style>
+        .bg-dark {
+            background-color: #282828 !important;
+        }
+
+        button:hover {
+            color: #ffffff !important;
+        }
+
+
+        input[type=range]::-moz-range-track {
+            width: 100%;
+            height: 4px;
+            border-radius: 1px;
+            border: 0px solid #fff;
+        }
+
+        input[type=range]::-moz-range-thumb {
+            background: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <div class="border-bottom">
+        <div class="m-3 row">
+            <img src="../icons/icon.png" alt="icon" height="40px">
+            <h3 class="text-muted pl-2">YouTube <strong class="text-white">Row</strong> Fixer</h1>
+        </div>
+    </div>
+    <div class="my-3">
+        <div class="mx-3">
+            <div class="form-group">
+                <label class="text-muted row m-0 mb-2" style="font-size: 1.2rem;" for="videoAmount">Video's on each
+                    row:<span class="text-white ml-1" id="video_val">4</span></label>
+                <input type="range" min="1" max="8" value="4" class="custom-range w-100" id="videoAmount">
             </div>
         </div>
-        <div class="my-3">
-            <div class="mx-3">
-                <div class="form-group">
-                    <label class="text-muted row m-0 mb-2" style="font-size: 1.2rem;" for="videoAmount">Video's on each row:<span class="text-white ml-1" id="video_val">4</span></label>
-                    <input type="range" min="1" max="8" value="4" class="slider w-100" id="videoAmount">
-                </div>
-            </div>
-            <div class="row mx-3">
-                <span class="border-left border-secondary"></span>
-                <a href="https://github.com/RootOperator/Youtube-row-fixer/issues">
-                    <button class="btn bg-transparent text-muted rounded-0 col">
-                        <i class="fas fa-bug pr-3"></i>
-                        <span>Report Bug</span>
-                    </button>
-                </a>
-                <span class="border-right border-secondary"></span>
-                <a href="https://github.com/RootOperator/YouTube-row-fixer">
-                    <button class="btn bg-transparent text-muted rounded-0 col">
-                        <i class="fab fa-github pr-3"></i>
-                        <span>Source Code</span>
-                    </button>
-                </a>
-                <span class="border-right border-secondary"></span>
-            </div>
+        <div class="row mx-3">
+            <span class="border-left border-secondary"></span>
+            <a href="https://github.com/RootOperator/Youtube-row-fixer/issues">
+                <button class="btn bg-transparent text-muted rounded-0 col">
+                    <i class="fas fa-bug pr-3"></i>
+                    <span>Report Bug</span>
+                </button>
+            </a>
+            <span class="border-right border-secondary"></span>
+            <a href="https://github.com/RootOperator/YouTube-row-fixer">
+                <button class="btn bg-transparent text-muted rounded-0 col">
+                    <i class="fab fa-github pr-3"></i>
+                    <span>Source Code</span>
+                </button>
+            </a>
+            <span class="border-right border-secondary"></span>
         </div>
-        <script src="./script.js"></script>
-    </body>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
 </html>
