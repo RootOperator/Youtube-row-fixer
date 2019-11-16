@@ -1,32 +1,31 @@
 {
+  "manifest_version": 2,
+  "name": "YouTube row fixer",
+  "version": "2.0",
+  "homepage_url": "https://github.com/RootOperator/YouTube-row-fixer",
 
-    "manifest_version": 2,
-    "name": "make YouTube great again",
-    "version": "1.0",
-  
-    "description": "decide how many videos you want on one row",
+  "description": "decide how many videos you want on one row",
 
-    "permissions":[
-      "activeTab",
-      "storage"
-    ],
+  "permissions":[
+    "activeTab",
+    "storage"
+  ],
 
-   "icons":{
-      "48": "icons/test.png"
-    },
+  "icons":{
+    "48": "icons/icons.png"
+  },
 
 
-    "browser_action":{
-      "default_icon": "icons/test.png",
-      "default_title": "YouTube fix",
-      "default_popup":"menu/index.html"
-    },
+  "browser_action":{
+    "default_icon": "icons/icon.png",
+    "default_title": "YouTube Row Fix",
+    "default_popup":"menu/index.html"
+  },
 
-    "content_scripts":[
-      {
-        "matches":["*://*.youtube.com/*"],
-        "js":["background.js"]
-      }
-    ]
-  
-  }
+  "content_scripts":[
+    {
+      "matches":["*://*.youtube.com/*"],
+      "js":["background.js"]
+    }
+  ]
+}
