@@ -1,4 +1,4 @@
-# big-YouTube-fix
+# YouTube row fixer
 
 
 this is an extension that fixes the new ugly youtube layout (big thumbnails) 
