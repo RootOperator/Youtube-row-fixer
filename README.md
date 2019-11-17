@@ -1,6 +1,6 @@
 # YouTube row fixer
 
-![preview not available](preview/preview.png)
+![preview not available](.preview/preview.png)
 
 This is an extension that fixes the new ugly youtube layout (big thumbnails) 
 and lets you set the amount of videos on a row yourself.
