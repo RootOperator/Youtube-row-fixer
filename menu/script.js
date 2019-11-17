@@ -12,7 +12,6 @@ browser.storage.local.get().then(data => {
 video_amount_slider.oninput = function () {
     show_val.innerHTML = this.value;
 
-
     browser.storage.local.set({
         "value": this.value
     });
