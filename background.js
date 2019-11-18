@@ -1,13 +1,14 @@
 function calculate_windoes_on_row(row_witdh, total_videos){
     let screen_width = screen.width - 305;
     let video_width = screen_width / total_videos;
-    if(video_width <= 190){
+    if(video_width <= 220){
         remove_avatar_img('none');
-    } else {
+    }  else {
         remove_avatar_img('');
     }
     return Math.round(row_witdh / video_width);
 }
+
 
 function remove_avatar_img(style){
     let avatar_img = document.getElementsByClassName('yt-simple-endpoint');
