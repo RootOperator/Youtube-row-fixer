@@ -1,7 +1,6 @@
 function calculate_windoes_on_row(row_witdh, total_videos){
     let screen_width = screen.width - 305;
     let video_width = screen_width / total_videos;
-    console.log(video_width);
     if(video_width <= 190){
         remove_avatar_img('none');
     } else {
