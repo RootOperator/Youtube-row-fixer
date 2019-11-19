@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Desktop (please complete the following information):**
  - Browser [e.g. chrome, safari]
  - Version [e.g. 22]
- - Extension version [e.g 2.1.0]
+ - Extension version [e.g b2.2.0]
 
 **Additional context**
 Add any other context about the problem here.
