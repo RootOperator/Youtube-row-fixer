@@ -9,7 +9,6 @@ function calculate_windoes_on_row(row_witdh, total_videos){
     return Math.round(row_witdh / video_width);
 }
 
-
 function remove_avatar_img(style){
     let avatar_img = document.getElementsByClassName('yt-simple-endpoint');
     for(let i = 0; i < avatar_img.length; i++){
@@ -31,8 +30,8 @@ function set_videos_on_row(total_videos){
 
 function row_value() {
     browser.storage.local.get().then(data => {
-        if(data.value){
-            set_videos_on_row(data.value);
+        if(data.video_value){
+            set_videos_on_row(data.video_value);
         }
     });;
 }
@@ -40,7 +39,12 @@ function row_value() {
 row_value();
 
 browser.runtime.onMessage.addListener(request => {
-    set_videos_on_row(request.value);
+    if(request.video_value){
+        set_videos_on_row(request.video_value);
+    }
+    if(request.disappear_value){
+        // remove icons on value
+    }
 });
 
 window.onresize = row_value;
