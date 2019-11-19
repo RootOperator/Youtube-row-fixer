@@ -1,4 +1,4 @@
-function calculate_windoes_on_row(row_witdh, total_videos){
+function calculate_windows_on_row(row_witdh, total_videos){
     let screen_width = screen.width - 305;
     let video_width = screen_width / total_videos;
     if(video_width <= 220){
@@ -22,7 +22,7 @@ function set_videos_on_row(total_videos){
     let video_rows = document.getElementsByClassName('ytd-two-column-browse-results-renderer');
     for(var i = 0; i < video_rows.length; i++){
         if(video_rows[i].style.cssText.includes('--ytd-rich-grid-items-per-row')){
-            let row = calculate_windoes_on_row(video_rows[i].clientWidth, total_videos);
+            let row = calculate_windows_on_row(video_rows[i].clientWidth, total_videos);
             video_rows[i].style.cssText = `--ytd-rich-grid-items-per-row: ${row};--ytd-rich-grid-posts-per-row: 4; --ytd-rich-grid-movies-per-row: 9;`;
         };
     }
@@ -33,7 +33,7 @@ function row_value() {
         if(data.video_value){
             set_videos_on_row(data.video_value);
         }
-    });;
+    });
 }
 
 row_value();
