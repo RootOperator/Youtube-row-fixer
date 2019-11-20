@@ -12,7 +12,7 @@ browser.storage.local.get().then(data => { // get local storage data and set ele
     }
     if (data.disappear_value){
         disappear_icon_slider.value = data.disappear_value;
-        disappear_icon_value.innerHTML = data.disappear_value;
+        disappear_icon_value.innerHTML = data.disappear_value > 1 ? data.disappear_value : "all";
     }
 });
 
