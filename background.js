@@ -1,32 +1,68 @@
-function calculate_windoes_on_row(row_witdh, total_videos) {
+let video_rows = document.getElementsByClassName('ytd-two-column-browse-results-renderer');
+
+let total_row;
+let total_disappear;
+let home = true;
+
+function calculate_windows_on_row(row_witdh){
+    check_remove();
     let screen_width = screen.width - 305;
-    let video_width = screen_width / total_videos;
+    let video_width = screen_width / total_row;
     return Math.round(row_witdh / video_width);
 }
 
-function set_videos_on_row(total_videos){
-    let video_rows = document.getElementsByClassName('ytd-two-column-browse-results-renderer');
+function check_remove(){
+    if(total_row >= total_disappear){
+        remove_avatar_img('none');
+    }  else {
+        remove_avatar_img('');
+    }
+}
+
+function remove_avatar_img(style){
+    let avatar_img = document.getElementsByClassName('yt-simple-endpoint');
+    for(let i = 0; i < avatar_img.length; i++){
+        if(avatar_img[i].id === 'avatar-link'){
+            avatar_img[i].style.display = style
+        }
+    }   
+}
+
+function set_videos_on_row(){
     for(var i = 0; i < video_rows.length; i++){
         if(video_rows[i].style.cssText.includes('--ytd-rich-grid-items-per-row')){
-            let row = calculate_windoes_on_row(video_rows[i].clientWidth, total_videos);
-            let val = `--ytd-rich-grid-items-per-row: ${row};--ytd-rich-grid-posts-per-row: 4; --ytd-rich-grid-movies-per-row: 9;`;
-            video_rows[i].style.cssText = val;
+            let row = calculate_windows_on_row(video_rows[i].clientWidth);
+            video_rows[i].style.cssText = `--ytd-rich-grid-items-per-row: ${row};--ytd-rich-grid-posts-per-row: 4; --ytd-rich-grid-movies-per-row: 9;`;
         };
     }
 }
 
 function row_value() {
     browser.storage.local.get().then(data => {
-        if(data.value){
-            set_videos_on_row(data.value);
+        if(data.video_value){
+            total_row = parseInt(data.video_value)
+            set_videos_on_row();
         }
-    });;
+        if(data.disappear_value){
+            total_disappear = parseInt(data.disappear_value)
+            check_remove();
+        }
+    });
 }
+
+browser.runtime.onMessage.addListener(request => {
+    if(request.video_value){
+        total_row = request.video_value
+        set_videos_on_row();
+    }
+    if(request.disappear_value){
+        total_disappear = request.disappear_value
+        check_remove()
+    }
+});
 
 row_value();
 
-browser.runtime.onMessage.addListener(request => {
-    set_videos_on_row(request.value);
-});
+window.onresize = set_videos_on_row;
 
-window.onresize = row_value;
+window.onscroll = check_remove;
