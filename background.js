@@ -40,11 +40,11 @@ function set_videos_on_row(){
 function row_value() {
     browser.storage.local.get().then(data => {
         if(data.video_value){
-            total_row = parseInt(data.video_value)
+            total_row = parseInt(data.video_value);
             set_videos_on_row();
         }
         if(data.disappear_value){
-            total_disappear = parseInt(data.disappear_value)
+            total_disappear = parseInt(data.disappear_value);
             check_remove();
         }
     });
@@ -52,12 +52,12 @@ function row_value() {
 
 browser.runtime.onMessage.addListener(request => {
     if(request.video_value){
-        total_row = request.video_value
+        total_row = parseInt(request.video_value);
         set_videos_on_row();
     }
     if(request.disappear_value){
-        total_disappear = request.disappear_value
-        check_remove()
+        total_disappear = parseInt(request.disappear_value);
+        check_remove();
     }
 });
 
