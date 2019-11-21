@@ -2,7 +2,6 @@ let video_rows = document.getElementsByClassName('ytd-two-column-browse-results-
 
 let total_row;
 let total_disappear;
-let home = true;
 
 function calculate_windows_on_row(row_witdh){
     check_remove();
