@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "YouTube row fixer",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "homepage_url": "https://github.com/RootOperator/YouTube-row-fixer",
   "applications": {
     "gecko": {
@@ -29,7 +29,7 @@
 
   "content_scripts":[
     {
-      "matches":["*://*.youtube.com/*"],
+      "matches":["*://*.youtube.com/"],
       "js":["background.js"],
       "run_at":"document_end" 
     }
