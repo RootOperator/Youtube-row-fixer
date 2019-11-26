@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+zip YouTubeRowFixer background.js manifest.json -r icons/ menu/
