@@ -29,7 +29,7 @@
 
   "content_scripts":[
     {
-      "matches":["*://*.youtube.com/"],
+      "matches":["*://*.youtube.com/*"],
       "js":["background.js"],
       "run_at":"document_end" 
     }
