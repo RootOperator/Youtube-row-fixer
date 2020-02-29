@@ -62,6 +62,8 @@ browser.runtime.onMessage.addListener(request => {
 
 row_value();
 
+window.onload = setTimeout(check_remove, 5);
+
 window.onresize = set_videos_on_row;
 
 window.onscroll = check_remove;
