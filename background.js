@@ -3,6 +3,16 @@ let video_rows = document.getElementsByClassName('ytd-two-column-browse-results-
 let total_row;
 let total_disappear;
 
+let style = `
+#contents > ytd-rich-grid-row,
+#contents > ytd-rich-grid-row > #contents {
+    display: contents !important
+}
+`
+var styleSheet = document.createElement("style")
+styleSheet.innerText = style
+document.body.appendChild(styleSheet)
+
 function calculate_windows_on_row(row_witdh){
     check_remove();
     let screen_width = screen.width - 305;
