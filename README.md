@@ -1,3 +1,5 @@
+# Deprecated until either of us has motivation to fix this
+
 # YouTube row fixer
 
 ![preview not available](.preview/preview.png)
